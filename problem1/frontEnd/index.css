@@ -1,13 +1,17 @@
-body{
-}
-
 h1{
     color: rgb(182, 45, 68);
 }
 
 div{
-    padding: 2px 16px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 2px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,'
+    0,0.2);
+    border-radius: 5px; 
     transition: 0.3s;
     width: 40%;
+}
+
+img{
+    width: 100px
+
 }

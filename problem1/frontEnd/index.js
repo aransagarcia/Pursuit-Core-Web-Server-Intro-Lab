@@ -6,55 +6,65 @@ async function loadDataFromServer() {
     console.log('this is working: I am listening to port 3000')
     console.log(response.data.results)
     displayingData(response.data)
-  //  makeCard(data.results)
+    //  makeCard(data.results)
 }
 
 
 
 
 const displayingData = (data) => {
-
-    //let personA = document.createElement('div')
-   // personA.id = "person"
-    //console.log(data)
     for (let i = 0; i < data.results.length; i++) {
-        let personDiv =document.createElement('div')
+        let personDiv = document.createElement('div')
         personDiv.class = "person"
         const genderA = document.createElement("p")
         genderA.innerText = data.results[i].gender;
-        
+
 
         const titleA = document.createElement("h2")
         titleA.innerText = data.results[i].name.title;
-        
 
-    //     const firstA = document.createElement("p")
-    //     firstA.innerText = data.results[i].name.first;
-    //    // person.appendChild(firstA)
 
-    //     const lastA = document.createElement("p")
-    //     lastA.innerText = data.results[i].name.last;
+        //     const firstA = document.createElement("p")
+        //     firstA.innerText = data.results[i].name.first;
+        //    // person.appendChild(firstA)
 
-        const name = document.createElement('p')
+        //     const lastA = document.createElement("p")
+        //     lastA.innerText = data.results[i].name.last;
+
+        const imageMen = document.createElement('img')
+        imageMen.src = "download.png"
+        const imageWomen = document.createElement('img')
+        imageWomen.src = "avatar6.png"
+
+        const name = document.createElement("p")
         name.innerText = data.results[i].name.first + ' ' + data.results[i].name.last
-       // person.appendChild(lastA)
-
+        // person.appendChild(lastA)
+        if (data.results[i].gender=== "male") {
+            personDiv.appendChild(imageMen)
+        } else {
+             personDiv.appendChild(imageWomen)
+        }
     
-       personDiv.appendChild(titleA)  
-       //personDiv.appendChild(firstA) 
-       //personDiv.appendChild(lastA) 
-       personDiv.appendChild(name)
-       personDiv.appendChild(genderA) 
-       document.body.append(personDiv)
-       makeCard(personDiv)
-    }
-   // document.body.append(personDiv)
-//makeCard(personDiv)
-} 
 
-const makeCard =(data)=>{
-console.log(data)
-console.log('recieving Div')
+        personDiv.appendChild(titleA)
+        //personDiv.appendChild(firstA) 
+        //personDiv.appendChild(lastA) 
+        personDiv.appendChild(name)
+        personDiv.appendChild(genderA)
+    
+
+        document.body.append(personDiv)
+
+
+        makeCard(personDiv)
+    }
+    // document.body.append(personDiv)
+    //makeCard(personDiv)
+}
+
+const makeCard = (data) => {
+    console.log(data)
+    console.log('recieving Div')
 }
 
 
@@ -70,19 +80,19 @@ console.log('recieving Div')
 
 // const displayDataFromServer = (data) => {
     //     console.log(data)
-    
+
     //     const genderHeader = document.createElement("h1")
     //     genderHeader.innerText = data.results[0].gender
-    
+
     //     const titleHeader = document.createElement('h2')
     //     titleHeader.innerText = data.results[0].name.title;
-    
+
     //     const firstHeader = document.createElement('h2');
     //     firstHeader.innerText = data.results[0].name.first;
-    
+
     //     const lastHeader = document.createElement('h2');
     //     lastHeader.innerText = data.results[0].name.last;
-    
-    
+
+
     //     document.body.append(genderHeader, titleHeader, firstHeader, lastHeader)
     // }
