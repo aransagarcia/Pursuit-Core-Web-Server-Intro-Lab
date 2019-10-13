@@ -31,25 +31,21 @@ makeChoices = (selectedQuestion) => {
     let option1 = document.createElement('option')
     let option2 = document.createElement('option')
     let option3 = document.createElement('option')
-
+    let option4 = document.createElement('option')
     //console.log("the array we are working with", selectedQuestion)
 
-    //option1.innerText = selectedQuestion.incorrect_answers[0]
-    option1.value = 'hello'
-    option1.appendChild.selectBox
+    option1.innerText = selectedQuestion.incorrect_answers[0]
     option2.innerText = selectedQuestion.incorrect_answers[1]
     option3.innerText = selectedQuestion.incorrect_answers[2]
+    option4.innerText = selectedQuestion.correct_answer
 
-
-    //option4.innerText = selectedQuestion.correct_answer
-
-    console.log(selectBox);
-    console.log(option1);
-
-
-
-    selectBox.appendChild.option1
+    selectBox.appendChild(option1)
+    selectBox.appendChild(option2)
+    selectBox.appendChild(option3)
+    selectBox.appendChild(option4)
+    
     selectBox.id = "answerChoices"
+    selectBox.value = "answer Choices"
     document.body.append(selectBox)
 }
 
